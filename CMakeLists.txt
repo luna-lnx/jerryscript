@@ -19,9 +19,6 @@ if(NOT DEFINED PYTHON)
   set(PYTHON "python")
 endif()
 # Determining version
-execute_process(COMMAND ${PYTHON} ${CMAKE_SOURCE_DIR}/tools/version.py
-                OUTPUT_VARIABLE JERRY_VERSION
-                OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 # Determining platform
 set(PLATFORM "${CMAKE_SYSTEM_NAME}")
@@ -133,7 +130,8 @@ message(STATUS "ENABLE_AMALGAM                 " ${ENABLE_AMALGAM} ${ENABLE_AMAL
 message(STATUS "ENABLE_LTO                     " ${ENABLE_LTO} ${ENABLE_LTO_MESSAGE})
 message(STATUS "ENABLE_STRIP                   " ${ENABLE_STRIP} ${ENABLE_STRIP_MESSAGE})
 message(STATUS "ENABLE_COMPILE_COMMANDS        " ${ENABLE_COMPILE_COMMANDS})
-message(STATUS "JERRY_VERSION                  " ${JERRY_VERSION})
+# "message(STATUS "JERRY_VERSION                  " ${JERRY_VERSION})"
+# omitted because no python allowed
 message(STATUS "JERRY_CMDLINE                  " ${JERRY_CMDLINE} ${JERRY_CMDLINE_MESSAGE})
 message(STATUS "JERRY_CMDLINE_TEST             " ${JERRY_CMDLINE_TEST} ${JERRY_CMDLINE_TEST_MESSAGE})
 message(STATUS "JERRY_CMDLINE_SNAPSHOT         " ${JERRY_CMDLINE_SNAPSHOT} ${JERRY_CMDLINE_SNAPSHOT_MESSAGE})
